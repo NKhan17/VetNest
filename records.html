@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health records | VetNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="app-page" data-role="owner" data-page="records">
+
+    <div class="app-shell">
+
+        <!-- Sidebar and top bar are filled in by js/shell.js -->
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <div class="app-main">
+            <header class="topbar" id="topbar"></header>
+
+            <main class="app-content">
+
+                <div class="page-head">
+                    <div>
+                        <h1>Health records</h1>
+                        <p>Vaccinations, consultations and tests, all in one place.</p>
+                    </div>
+                    <div class="page-actions">
+                        <button type="button" class="button button-primary" id="addRecordBtn">Add record</button>
+                    </div>
+                </div>
+
+                <div class="rows" id="recReminders" style="margin-bottom:22px"></div>
+
+                <div class="chips" id="petChips" aria-label="Filter by pet"></div>
+                <div class="tabs" id="typeTabs" role="tablist">
+                    <button type="button" class="tab active" data-type="all">All</button>
+                    <button type="button" class="tab" data-type="vaccination">Vaccinations</button>
+                    <button type="button" class="tab" data-type="consultation">Consultations</button>
+                    <button type="button" class="tab" data-type="lab">Lab tests</button>
+                </div>
+
+                <div class="timeline" id="timeline"></div>
+            </main>
+        </div>
+
+    </div>
+
+    <dialog class="modal" id="recordDialog" aria-labelledby="recordDialogTitle">
+        <form class="modal-body" id="recordForm">
+            <h2 id="recordDialogTitle">Add a health record</h2>
+            <p class="muted">Log a vaccination, visit or test, including ones from another clinic.</p>
+            <div class="form-stack">
+                <div class="field">
+                    <label for="recPet">Pet</label>
+                    <select id="recPet" required></select>
+                </div>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="recType">Type</label>
+                        <select id="recType">
+                            <option value="vaccination">Vaccination</option>
+                            <option value="consultation">Consultation</option>
+                            <option value="lab">Lab test</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="recDate">Date</label>
+                        <input type="date" id="recDate" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="recTitle">Title</label>
+                    <input type="text" id="recTitle" placeholder="e.g. Rabies booster" required>
+                </div>
+                <div class="field">
+                    <label for="recVet">Vet or clinic <span class="muted">(optional)</span></label>
+                    <input type="text" id="recVet" placeholder="Dr. Name or clinic">
+                </div>
+                <div class="field">
+                    <label for="recNotes">Notes <span class="muted">(optional)</span></label>
+                    <textarea id="recNotes" placeholder="Anything worth remembering"></textarea>
+                </div>
+                <div class="field">
+                    <label for="recDue">Next due date <span class="muted">(optional)</span></label>
+                    <input type="date" id="recDue">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="button button-ghost" data-close>Cancel</button>
+                <button type="submit" class="button button-primary">Save record</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="js/store.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/shell.js"></script>
+    <script src="js/owner.js"></script>
+
+</body>
+</html>

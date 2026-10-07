@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track visit | VetNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="app-page" data-role="owner" data-page="tracking">
+
+    <div class="app-shell">
+
+        <!-- Sidebar and top bar are filled in by js/shell.js -->
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <div class="app-main">
+            <header class="topbar" id="topbar"></header>
+
+            <main class="app-content">
+
+                <div class="page-head">
+                    <div>
+                        <h1>Track your visit</h1>
+                        <p>Follow your appointment status and your place in the hospital queue.</p>
+                    </div>
+                    <div class="page-actions">
+                        <a href="appointment.html" class="button button-ghost">Book another</a>
+                    </div>
+                </div>
+
+                <div class="track-grid">
+                    <section>
+                        <div class="tabs" role="tablist">
+                            <button type="button" class="tab active" data-tab="active" role="tab">Active</button>
+                            <button type="button" class="tab" data-tab="past" role="tab">Past</button>
+                        </div>
+                        <div class="rows" id="visitList"></div>
+                    </section>
+
+                    <section class="card" id="trackPanel" aria-live="polite"></section>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <script src="js/store.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/shell.js"></script>
+    <script src="js/owner.js"></script>
+
+</body>
+</html>

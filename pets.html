@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My pets | VetNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="app-page" data-role="owner" data-page="pets">
+
+    <div class="app-shell">
+
+        <!-- Sidebar and top bar are filled in by js/shell.js -->
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <div class="app-main">
+            <header class="topbar" id="topbar"></header>
+
+            <main class="app-content">
+
+                <div class="page-head">
+                    <div>
+                        <h1>My pets</h1>
+                        <p>Keep a profile for each of your pets.</p>
+                    </div>
+                    <div class="page-actions">
+                        <button type="button" class="button button-primary" id="addPetBtn">Add a pet</button>
+                    </div>
+                </div>
+
+                <div class="pet-grid" id="petGrid"></div>
+            </main>
+        </div>
+
+    </div>
+
+    <dialog class="modal" id="petDialog" aria-labelledby="petDialogTitle">
+        <form class="modal-body" id="petForm">
+            <h2 id="petDialogTitle">Add a pet</h2>
+            <p class="muted">Tell us a little about your pet so vets have the basics before you arrive.</p>
+            <input type="hidden" id="petId">
+            <div class="form-stack">
+                <div class="field">
+                    <label for="petName">Pet's name</label>
+                    <input type="text" id="petName" placeholder="e.g. Bruno" required>
+                </div>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="petSpecies">Species</label>
+                        <select id="petSpecies">
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="bird">Bird</option>
+                            <option value="rabbit">Rabbit</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="petBreed">Breed</label>
+                        <input type="text" id="petBreed" placeholder="e.g. Labrador">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="petAge">Age (years)</label>
+                        <input type="number" id="petAge" min="0" max="40" step="0.5" placeholder="3">
+                    </div>
+                    <div class="field">
+                        <label for="petWeight">Weight (kg)</label>
+                        <input type="number" id="petWeight" min="0" max="120" step="0.1" placeholder="12.5">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="petNotes">Health notes <span class="muted">(optional)</span></label>
+                    <textarea id="petNotes" placeholder="Allergies, past conditions, medication..."></textarea>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="button button-ghost" data-close>Cancel</button>
+                <button type="submit" class="button button-primary">Save pet</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="js/store.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/shell.js"></script>
+    <script src="js/owner.js"></script>
+
+</body>
+</html>
