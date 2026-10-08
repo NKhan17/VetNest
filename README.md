@@ -1,6 +1,6 @@
 # 🐾 VetNest
 
-**Smart healthcare for every paw.** VetNest is a vet clinic booking web app that connects pet owners, veterinarians and hospitals. Owners book appointments and follow their visit live; vets and hospital staff manage the queue in real time.
+**Smart healthcare for every paw.** VetNest is a vet clinic booking web app that connects pet owners, veterinarians and hospitals. Owners book appointments and follow their visit live. they can see live crowd data on a heat map with all the available vetenary hospitals in bengaluru (for now) and their live crowd levels; vets and hospital staff manage the appointments in real time.
 
 > **Status:** Frontend complete (runs fully in the browser with demo data). Backend (Node.js, Express, MongoDB) is in progress.
 
